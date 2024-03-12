@@ -14,7 +14,7 @@ export async function getServerSideProps() {
   );
 
   // try to post the testsList if no testsList in mongo
-  await fetch(`${process.env.APP_URL}/api/testsCRUD/postTestsList`, {
+  await fetch(`${process.env.NEXT_APP_URL}/api/testsCRUD/postTestsList`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ testsList: transformedTestsList }),
@@ -22,7 +22,7 @@ export async function getServerSideProps() {
 
   // received list from mongo
   const receivedList = await fetcher(
-    `${process.env.APP_URL}/api/testsCRUD/getTestsList`
+    `${process.env.NEXT_APP_URL}/api/testsCRUD/getTestsList`
   );
 
   return { props: { transformedTestsList, receivedList } };
