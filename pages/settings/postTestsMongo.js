@@ -1,4 +1,4 @@
-import { fetcher } from "@/lib/fetcher";
+import { fetcher } from "../../lib/fetcher";
 import { useState } from "react";
 
 export async function getServerSideProps() {

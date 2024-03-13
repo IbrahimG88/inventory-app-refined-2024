@@ -1,5 +1,6 @@
 import { connectToDatabase } from "../../../lib/db";
 import initMiddleware from "../../../lib/init-middleware";
+import Cors from "cors";
 
 // Initialize the cors middleware
 const cors = initMiddleware(
