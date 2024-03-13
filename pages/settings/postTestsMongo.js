@@ -1,7 +1,7 @@
 import { fetcher } from "@/lib/fetcher";
 import { useState } from "react";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Replace with your Mongo fetching logic
   const apiListData = await fetcher(
     `${process.env.LIS_LAB_URL}/api2/integration/tests`
