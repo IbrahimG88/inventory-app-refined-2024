@@ -43,7 +43,16 @@ export default function SyncTestsAdditionsAndDepletions({
     console.log("transformedTestsList", transformedTestsList);
 
     for (apiTest in transformedTestsList) {
-      const findAddedTest = () => {};
+      const findAddedTest = () => {
+        const AddedTest = mongoList.find(
+          (test) => test.id == apiTest.id && test.testName == apiTest.testName
+        );
+        if (!AddedTest.length) {
+          // api to add to mongo
+          console.log("apiTest that is not in mongoList", apiTest);
+        }
+      };
+      findAddedTest();
     }
   };
 
